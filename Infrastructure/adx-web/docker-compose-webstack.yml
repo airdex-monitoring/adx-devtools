@@ -1,0 +1,22 @@
+version: '3.2'
+
+services:
+  adx-web: 
+    image: ghcr.io/airdex-monitoring/adx-web:latest
+    ports:
+      - '3000:3000'
+    environment:
+      ADX_API_URL:
+    networks:
+      - adx-shared-network 
+    deploy:
+      mode: replicated
+      replicas: 1
+      resources:
+        limits:
+          cpus: '0.2'
+          memory: 256M
+
+networks:
+  adx-shared-network:
+    external: true
