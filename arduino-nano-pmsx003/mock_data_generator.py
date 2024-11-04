@@ -52,7 +52,7 @@ def generate_random_data():
     
     # Generate random PM values between 0 and 50
     pm_1_0 = random.randint(0, 50)
-    pm_2_5 = random.randint(0, 50)
+    pm_2_5 = random.randint(50, 100)
     pm_10 = random.randint(0, 50)
     
     return {
